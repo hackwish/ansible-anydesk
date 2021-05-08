@@ -1,0 +1,14 @@
+---
+# tasks file for ansible-anydesk
+#SyncThing
+- apt_key:
+    url: https://keys.anydesk.com/repos/DEB-GPG-KEY
+    state: present
+- apt_repository:
+    repo: deb http://deb.anydesk.com/ all main
+    state: present
+
+- name: Install anydesk
+  apt:
+    name: anydesk
+    state: present
